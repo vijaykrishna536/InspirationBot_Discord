@@ -4,6 +4,8 @@ import requests
 import json
 import random
 from replit import db
+from keep_alive import keep_alive
+
 
 my_secret = os.environ['token']
 client = discord.Client()
@@ -93,4 +95,5 @@ async def on_message(message):
       await message.channel.send("Encourage Disabled")
     
 
+keep_alive()
 client.run(my_secret)
